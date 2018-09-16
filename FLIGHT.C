@@ -9,7 +9,7 @@ typedef struct{
 	char time[6];
 	char gate[3];
 }Flight;
-Flight flight={"YZ22","10-12-2008","20:30","RT"};
+Flight flight={"Y2Z2","12-08-2018","20:30","RT"};
 
 typedef struct{
 	char name[30];
@@ -35,7 +35,7 @@ int booking_ID=100;
 int seatsAvailable=20;
 int password;
 
-int main(void)
+int main()
 {
 	displaymenu();
 	while(selection!=4)
@@ -51,7 +51,7 @@ int main(void)
 	printf("\tAirline System\n"
 		  "\t=======================\n"
 		  "\t  MENU\n"
-		  "\t=======================\n"
+		  "\t=======================\n"	
 		  "\t1.BOOKING\n"
 		  "\t2.SEAT\n"
 		  "\t3.RECORDS\n"
@@ -99,7 +99,7 @@ int main(void)
 		if(choice[i][j].seats<=seatsAvailable)
 		{
 		printf("\tPlease enter passenger name : ");
-		scanf("%[^\n]",choice[i][j].name);
+		scanf("%s",choice[i][j].name);
 		fflush(stdin);
 		ticket();
 		booking_ID++;
@@ -121,7 +121,7 @@ int main(void)
 		if(choice[i][j].seats>seatsAvailable)
 			{
 				printf("\n");
-				printf("\tThe flight leave %d seats\n",seatsAvailable);
+				printf("\tThe flight have %d seats\n",seatsAvailable);
 				displaymenu();
 			}
 	return;
@@ -131,15 +131,15 @@ int main(void)
 	{
 	printf("\n\n");
 	
-	printf("\t-----------------AIRLINE BOOKING TICKET----------------\n");
-	printf("\t============================================================\n");
+	printf("\t-------------------------AIRLINE BOOKING TICKET--------------------------\n");
+	printf("\t=========================================================================\n");
 	printf("\t Booking ID : %d	 \t\t\tFlight No : %s\n",booking_ID,flight.flightNo);
 	printf("\t Passenger  : %s\n",choice[i][j].name);
 	printf("\t\t\t						Date	  : %s\n",flight.date);
 	printf("\t						Time	  : %s\n",flight.time);
 	printf("\t						Gate	  : %s\n",flight.gate);
-	printf("\t						  Seats No. : %d%c  \n\n",i+1,j+65);
-	printf("\t============================================================\n");
+	printf("\t					   Seats No. : %d%c  \n\n",i+1,j+65);
+	printf("\t=========================================================================\n");
 	return;}
 
 
